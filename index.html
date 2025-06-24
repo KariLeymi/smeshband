@@ -4,10 +4,9 @@
     <style>
         body {
             background-image: url('images/smeshband.jpg');
-            /* Вариант 1: точный размер в процентах (66.66% = 2/3) */
             background-size: 66.66% auto;
-            /* Вариант 2: можно использовать scale (но это для transform, не для background) */
-            /* transform: scale(0.666); - не подходит для фона */
+            
+           transform: scale(0.666); 
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -15,8 +14,8 @@
             padding: 0;
             color: #fff;
             font-family: Arial, sans-serif;
-            /* Для лучшего отображения можно добавить фоновый цвет */
-            background-color: #222; /* На случай, если картинка не загрузится */
+           
+            background-color: #222; 
         }
         
         .content-wrapper {
@@ -25,7 +24,7 @@
             padding: 20px;
         }
         
-        /* Остальные стили остаются без изменений */
+       
         header, nav, main, footer {
             max-width: 1200px;
             margin: 0 auto;
