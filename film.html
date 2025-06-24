@@ -1,0 +1,151 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильмография | СмешBand</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .video-container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            background-color: #000;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        .video-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-container .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-container .play-button::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-left: 35px solid #333;
+            border-bottom: 20px solid transparent;
+            margin-left: 8px;
+        }
+        
+        table {
+            width: 90%;
+            margin: 20px auto;
+        }
+        td, th {
+            padding: 12px;
+        }
+        td:nth-child(4) {
+            width: 450px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 align="center"><em>Фильмография</em></h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Главная</a> | 
+        <a href="Info.html">Общая информация</a> | 
+        <a href="History.html">История</a> | 
+        <a>Фильмография</a> | 
+        <a href="Disc.html">Дискография</a> | 
+        <a href="Links.html">Источники</a> | 
+        <a href="Shop.html">Заказать альбом</a> | 
+        <a href="Contacts.html">Контакты</a>
+    </nav>
+    
+    <main>
+        <table border="1" align="center">
+            <tr align="center">
+                <td>Год</td>
+                <td>Название</td>
+                <td>Исполнители</td>
+                <td>Клип</td>
+                <td>Примечание</td>
+            </tr>
+            
+            <!-- Самый старый (2004) -->
+            <tr align="center">
+                <td>2004</td>
+                <td>От винта!</td>
+                <td>Сергей Мардарь</td>
+                <td>
+                    <div class="video-container" onclick="loadVideo(this, 'https://rutube.ru/play/embed/1ec8a00ef246fb66e506e8d547250aca')">
+                        <img src="https://avatars.mds.yandex.net/i?id=c812d95c3ef9ff911214c905f7ef8929_l-10355051-images-thumbs&n=13" alt="От винта!">
+                        <div class="play-button"></div>
+                    </div>
+                </td>
+                <td>Серия «Полёты во сне и наяву»</td>
+            </tr>
+            
+            <!-- 2012 -->
+            <tr align="center">
+                <td>2012</td>
+                <td>Марафонец</td>
+                <td>Михаил Черняк, Антон Виноградов, Сергей Мардарь, Марина Ланда, Сергей Васильев</td>
+                <td>
+                    <div class="video-container" onclick="loadVideo(this, 'https://rutube.ru/play/embed/93b23a3eb1d770cf919caeda57f094a7')">
+                        <img src="https://media.myshows.me/episodes/normal/f/0c/f0c5f71df2f38396bed6d5e270cb6b2f.jpg" alt="Марафонец">
+                        <div class="play-button"></div>
+                    </div>
+                </td>
+                <td>1 января 2012 года</td>
+            </tr>
+            
+            <!-- 2013 -->
+            <tr align="center">
+                <td>2013</td>
+                <td>Обормот</td>
+                <td>Марина Ланда и Сергей Мардарь</td>
+                <td>
+                    <div class="video-container" onclick="loadVideo(this, 'https://rutube.ru/play/embed/7a17f7b9ae0b3f6d16c3d63891bd1536')">
+                        <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_670138fa92eb807fc9d70822_67013914b022c20629fd5b5c/scale_1200" alt="Обормот">
+                        <div class="play-button"></div>
+                    </div>
+                </td>
+                <td>31 марта 2013 года</td>
+            </tr>
+            
+            <!-- Самый новый (2023) -->
+            <tr align="center">
+                <td>2023</td>
+                <td>ПинКод</td>
+                <td>Сергей Мардарь и Марина Ланда</td>
+                <td>
+                    <div class="video-container" onclick="loadVideo(this, 'https://vk.com/video_ext.php?oid=-90185057&id=171419233&hash=5a6c9e3e5d3e8a9f')">
+                        <img src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_656c35379894eb78400b31e4_656c389e05476c49d8a497a3/scale_1200" alt="ПинКод">
+                        <div class="play-button"></div>
+                    </div>
+                </td>
+                <td>Новый релиз</td>
+            </tr>
+        </table>
+    </main>
+    
+    <footer>
+        <hr align="center" width="50%" size="1" color="green">
+        <p align="center"><font face="Arial" size="1">&copy; Все права защищены. СмешBand, 2025</font></p>
+    </footer>
+
+    <script>
+        function loadVideo(container, videoUrl) {
+            container.innerHTML = `<iframe width="400" height="300" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        }
+    </script>
+</body>
+</html>
